@@ -9,6 +9,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, `src`),
+      api: resolve(__dirname, `src/api`),
+      assets: resolve(__dirname, `src/assets`),
+      store: resolve(__dirname, `src/store`),
+      utils: resolve(__dirname, `src/utils`),
+      router: resolve(__dirname, `src/router`),
+      views: resolve(__dirname, `src/views`),
     },
   },
   base: `./`,
@@ -23,7 +29,7 @@ export default defineConfig({
         target: ``,
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(`/api/`, `/`),
+        rewrite: (path) => path.replace(/^\/api/, ``),
       },
     },
   },
